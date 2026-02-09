@@ -45,3 +45,14 @@ function submitComment() {
   nameField.value = '';
   commentField.value = '';
 }
+
+const showHideBtn = document.querySelector('.show-hide');
+const commentWrapper = document.querySelector('.comment-wrapper');
+
+showHideBtn.addEventListener('click', () => {
+  const isHidden = commentWrapper.style.display === 'none';
+
+  commentWrapper.style.display = isHidden ? 'block' : 'none';
+  showHideBtn.textContent = isHidden ? 'Hide comments' : 'Show comments';
+  showHideBtn.setAttribute('aria-expanded', isHidden);
+});
