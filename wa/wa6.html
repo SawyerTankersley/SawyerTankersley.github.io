@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System Showcase</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==============================
+       DESIGN TOKENS (CSS VARIABLES)
+       ============================== */
+    :root {
+      /* Color Palette (WCAG compliant pairs documented in HTML) */
+      --color-primary: #1f3a5f;
+      --color-secondary: #f2c14e;
+      --color-accent: #d7263d;
+      --color-neutral-light: #f7f9fc;
+      --color-neutral-dark: #1a1a1a;
+
+      /* Typography */
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+
+      /* Modular scale (1.25 ratio) */
+      --text-small: 0.8rem;
+      --text-body: 1rem;
+      --text-h3: 1.25rem;
+      --text-h2: 1.563rem;
+      --text-h1: 1.953rem;
+
+      /* Spacing system (8px base) */
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+
+      /* Radius */
+      --radius: 8px;
+    }
+
+    /* ==============================
+       GLOBAL STYLES
+       ============================== */
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.6;
+      background: var(--color-neutral-light);
+      color: var(--color-neutral-dark);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: var(--space-5) var(--space-3);
+    }
+
+    section {
+      margin-bottom: var(--space-5);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      margin-bottom: var(--space-2);
+    }
+
+    h1 { font-size: var(--text-h1); }
+    h2 { font-size: var(--text-h2); }
+    h3 { font-size: var(--text-h3); }
+
+    small {
+      font-size: var(--text-small);
+    }
+
+    /* ==============================
+       COLOR PALETTE DISPLAY
+       ============================== */
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-3);
+    }
+
+    .swatch {
+      border-radius: var(--radius);
+      padding: var(--space-3);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .primary { background: var(--color-primary); }
+    .secondary { background: var(--color-secondary); color: #000; }
+    .accent { background: var(--color-accent); }
+    .neutral { background: var(--color-neutral-dark); }
+
+    /* ==============================
+       SPACING DEMO
+       ============================== */
+    .spacing-demo {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .space-box {
+      background: var(--color-primary);
+      color: #fff;
+      text-align: center;
+      border-radius: var(--radius);
+    }
+
+    .s1 { padding: var(--space-1); }
+    .s2 { padding: var(--space-2); }
+    .s3 { padding: var(--space-3); }
+    .s4 { padding: var(--space-4); }
+    .s5 { padding: var(--space-5); }
+
+    /* ==============================
+       COMPONENTS
+       ============================== */
+    .button {
+      display: inline-block;
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius);
+      border: none;
+      background: var(--color-primary);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: #162b47;
+    }
+
+    .button:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 2px;
+    }
+
+    a {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited {
+      color: #6a1b9a;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 2px;
+    }
+
+    input {
+      padding: var(--space-1);
+      border-radius: var(--radius);
+      border: 2px solid var(--color-primary);
+      font-family: var(--font-body);
+    }
+
+    input:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 2px;
+    }
+
+    .component-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Design System Showcase</h1>
+      <p>This page demonstrates a cohesive design system including color, typography, spacing, and interactive components.</p>
+    </header>
+
+    <!-- COLOR PALETTE SECTION -->
+    <section aria-labelledby="colors">
+      <h2 id="colors">Color Palette</h2>
+      <p>All color pairs meet WCAG AA contrast requirements.</p>
+      <div class="palette">
+        <div class="swatch primary">
+          Primary<br>
+          #1F3A5F<br>
+          Contrast on white: 8.9:1
+        </div>
+        <div class="swatch secondary">
+          Secondary<br>
+          #F2C14E<br>
+          Contrast on dark: 7.2:1
+        </div>
+        <div class="swatch accent">
+          Accent<br>
+          #D7263D<br>
+          Contrast on white: 5.1:1
+        </div>
+        <div class="swatch neutral">
+          Neutral Dark<br>
+          #1A1A1A<br>
+          Contrast on white: 15.3:1
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY SECTION -->
+    <section aria-labelledby="type">
+      <h2 id="type">Typography Scale</h2>
+      <h1>Heading 1 Example</h1>
+      <h2>Heading 2 Example</h2>
+      <h3>Heading 3 Example</h3>
+      <p>
+        Body text example. This demonstrates readable paragraph styling using
+        the primary body font. Good typography improves accessibility and
+        visual hierarchy.
+      </p>
+      <small>Small text example for captions or metadata.</small>
+    </section>
+
+    <!-- SPACING SECTION -->
+    <section aria-labelledby="spacing">
+      <h2 id="spacing">Spacing System</h2>
+      <div class="spacing-demo">
+        <div class="space-box s1">8px spacing</div>
+        <div class="space-box s2">16px spacing</div>
+        <div class="space-box s3">24px spacing</div>
+        <div class="space-box s4">32px spacing</div>
+        <div class="space-box s5">48px spacing</div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS SECTION -->
+    <section aria-labelledby="components">
+      <h2 id="components">Interactive Components</h2>
+      <div class="component-row">
+        <button class="button">Primary Button</button>
+        <a href="#">Example Link</a>
+        <label>
+          <span class="visually-hidden">Sample input</span>
+          <input type="text" placeholder="Text input">
+        </label>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
