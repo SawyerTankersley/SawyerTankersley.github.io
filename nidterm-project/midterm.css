@@ -1,58 +1,93 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    line-height: 1.6;
+font-family: Arial, sans-serif;
+margin: 0;
+line-height: 1.6;
+font-size: 18px;
+}
+
+.skip-link {
+position: absolute;
+left: -999px;
+top: 10px;
+background: black;
+color: white;
+padding: 8px;
+}
+
+.skip-link:focus {
+left: 10px;
 }
 
 header {
-    background: green;
-    color: white;
+background: #2e7d32;
+color: white;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 40px;
+flex-wrap: wrap;
+}
+
+.logo {
+font-size: 1.5rem;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+list-style: none;
+display: flex;
+gap: 20px;
+padding: 0;
+margin: 0;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
+color: white;
+text-decoration: none;
+font-weight: bold;
 }
 
 nav a:hover {
-    text-decoration: underline;
+text-decoration: underline;
+}
+
+nav a:focus {
+outline: 3px solid yellow;
 }
 
 main {
-    padding: 40px;
+max-width: 1000px;
+margin: auto;
+padding: 40px;
 }
 
 .hero {
-    text-align: center;
-    margin-bottom: 40px;
+text-align: center;
+margin-bottom: 40px;
+}
+
+.responsive-img {
+max-width: 100%;
+height: auto;
+border-radius: 6px;
+margin-top: 20px;
 }
 
 .project {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
+border: 1px solid #ccc;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 6px;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background: #f4f4f4;
+text-align: center;
+padding: 20px;
+background: #f4f4f4;
+margin-top: 40px;
 }
-
-/* Responsive Design */
 
 @media (max-width: 600px) {
 
@@ -64,10 +99,27 @@ align-items: flex-start;
 nav ul {
 flex-direction: column;
 gap: 10px;
+margin-top: 10px;
 }
 
 main {
 padding: 20px;
+}
+
+.hero h2 {
+font-size: 1.6rem;
+}
+
+}
+
+@media (min-width: 1200px) {
+
+main {
+max-width: 1100px;
+}
+
+.hero h2 {
+font-size: 2.2rem;
 }
 
 }
