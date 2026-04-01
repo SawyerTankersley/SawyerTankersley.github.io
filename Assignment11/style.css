@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/* form styling */
+#wrapper {
+  width: 60%;
+  margin-left: 4%;
+}
+
+div#formcol1 {
+  float: left;
+  width: 100%;
+}
+
+/* Remove list bullet points from form fields */
+#formcol1 li {
+  list-style: none;
+}
+
+/* Label styling for better alignment */
+label {
+  margin-right: 0.3em;
+  width: 6.3em; /* adjust as needed */
+  display: inline-block;
+  text-align: right;
+}
+
+/* Highlighting focus for keyboard and mouse navigation */
+select:focus,
+select:active,
+input:focus,
+input:active,
+input:focus + label,
+input:active + label,
+label[for]:focus,
+label[for]:active {
+  color: #FFF !important;
+  background-color: #BB3D2F !important;
+}
+
+/* Styling required fields with background color */
+#formcol1 input.reqfield {
+  background: #FF9;
+}
+
+/* Optional: spacing for radio buttons */
+#multchoice span {
+  margin-right: 1.5em;
+}
+
+/* Optional: submit button styling */
+.submit-button {
+  margin-top: 1em;
+}
+
+/* end of form css */
