@@ -2,7 +2,9 @@ let newBtn = document.querySelector('#js-new-quote');
 newBtn.addEventListener('click', getQuote);
 
 let answerBtn = document.querySelector('#js-tweet');
+answerBtn.addEventListener('click', showAnswer);
 
+const answerText = document.querySelector('#js-answer-text');
 
 let current = {
     question: "",
@@ -12,19 +14,21 @@ let current = {
 const endpoint = 'https://trivia.cyberwisp.com/getrandomchristmasquestion';
 
 async function getQuote() {
-   // alert("Burger!");
    try {
     const response = await fetch(endpoint);
     if (!response.ok) {
         throw Error(response.statusText);
     }
     const json = await response.json();
-    console.log(json);
+
     displayQuote(json['question']);
     current.question = json["question"];
     current.answer = json["answer"];
+
+    answerText.textContent = "";
+
    } catch (err) {
-    console.log(err)
+    console.log(err);
     alert('Failed to catch new quote');
    }
 }
@@ -35,7 +39,6 @@ function displayQuote(quote) {
 }
 
 function showAnswer() {
-    const answerText = document.querySelector('#js-answer-text');
     answerText.textContent = current.answer;
 }
 
