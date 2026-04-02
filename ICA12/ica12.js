@@ -25,6 +25,7 @@ async function getQuote() {
     current.question = json["question"];
     current.answer = json["answer"];
 
+    //clear old answer when new question loads
     answerText.textContent = "";
 
    } catch (err) {
