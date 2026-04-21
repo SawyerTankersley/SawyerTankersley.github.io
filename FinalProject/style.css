@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+#panel {
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px solid black;
+  display: inline-block;
+  background-color: #f2f2f2;
+}
+
+#sliderContainer {
+  margin-top: 20px;
+}
+
+#volumeSlider {
+  width: 200px;
+}
+
+/* Extra frustration: panel shifts slightly */
+#panel:hover {
+  transform: translateX(10px);
+}
