@@ -1,3 +1,9 @@
+const volumeSlider = document.getElementById("volumeSlider");
+const volumeDisplay = document.getElementById("volumeDisplay");
+const confirmBtn = document.getElementById("confirmVolume");
+const statusMessage = document.getElementById("statusMessage");
+
+let currentVolume = 50;
 const answerSection = document.getElementById("answerSection");
 const openBtn = document.getElementById("openBtn");
 const panel = document.getElementById("panel");
@@ -43,3 +49,17 @@ function showSliderTemporarily() {
     answerInput.value = "";
   }, 2000); // disappears after 2 seconds
 }
+
+volumeSlider.addEventListener("input", () => {
+  currentVolume = volumeSlider.value;
+  volumeDisplay.textContent = `Volume: ${currentVolume}`;
+});
+
+confirmBtn.addEventListener("click", () => {
+  statusMessage.textContent = `Volume set to ${currentVolume}!`;
+
+  setTimeout(() => {
+    sliderContainer.classList.add("hidden");
+    statusMessage.textContent = "";
+  }, 2000);
+});

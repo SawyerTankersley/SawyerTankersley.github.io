@@ -23,8 +23,3 @@ body {
 #volumeSlider {
   width: 200px;
 }
-
-/* Extra frustration: panel shifts slightly */
-#panel:hover {
-  transform: translateX(10px);
-}
